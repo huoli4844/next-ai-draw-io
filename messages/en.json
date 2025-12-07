@@ -1,0 +1,99 @@
+{
+    "nav": {
+        "editor": "Editor",
+        "about": "About",
+        "github": "View on GitHub"
+    },
+    "chat": {
+        "send": "Send",
+        "sending": "Sending...",
+        "placeholder": "Ask AI to create or modify your diagram...",
+        "clearChat": "Clear chat",
+        "clearConfirmTitle": "Clear chat history?",
+        "clearConfirmDesc": "This will clear all messages but keep your current diagram.",
+        "clearConfirmCancel": "Cancel",
+        "clearConfirmClear": "Clear",
+        "errorRetry": "Retry",
+        "maxFiles": "Maximum {count} files allowed",
+        "fileRejected": "{count} files rejected:",
+        "fileTooLarge": "\"{name}\" is {size} (exceeds 2MB)",
+        "onlyMore": "Only {count} more file(s) allowed"
+    },
+    "settings": {
+        "title": "Settings",
+        "description": "Configure your access settings.",
+        "accessCode": "Access Code",
+        "accessCodePlaceholder": "Enter access code",
+        "accessCodeDesc": "Required if the server has enabled access control.",
+        "closeProtection": "Close Protection",
+        "closeProtectionDesc": "Show confirmation when leaving the page.",
+        "cancel": "Cancel",
+        "save": "Save",
+        "verifying": "Verifying...",
+        "invalidCode": "Invalid access code"
+    },
+    "history": {
+        "title": "Diagram History",
+        "description": "View and restore previous diagram versions",
+        "current": "Current",
+        "version": "Version {count}",
+        "restore": "Restore",
+        "close": "Close",
+        "empty": "No history available"
+    },
+    "save": {
+        "title": "Save Diagram",
+        "description": "Download your diagram in various formats",
+        "format": "Format",
+        "filename": "Filename",
+        "filenamePlaceholder": "my-diagram",
+        "download": "Download",
+        "cancel": "Cancel"
+    },
+    "buttons": {
+        "attachImage": "Attach image",
+        "viewHistory": "View history",
+        "saveDiagram": "Save diagram",
+        "clearChat": "Clear chat",
+        "settings": "Settings",
+        "toggleTheme": "Toggle theme",
+        "togglePanel": "Toggle chat panel"
+    },
+    "tooltip": {
+        "pasteImage": "or paste/drop image",
+        "shortcuts": "Cmd/Ctrl+Enter to send"
+    },
+    "message": {
+        "copy": "Copy",
+        "copied": "Copied!",
+        "edit": "Edit",
+        "regenerate": "Regenerate",
+        "thumbsUp": "Thumbs up",
+        "thumbsDown": "Thumbs down",
+        "viewDiagram": "View diagram"
+    },
+    "examples": {
+        "title": "Examples",
+        "placeholder": "Try these example prompts:",
+        "createFlowchart": "Create a flowchart for user login process",
+        "createArchitecture": "Create an AWS architecture diagram with EC2, RDS, and S3",
+        "addAnimation": "Add animated connectors to my diagram",
+        "welcomeTitle": "Create diagrams with AI",
+        "welcomeDesc": "Describe what you want to create or upload an image to replicate",
+        "quickExamples": "Quick Examples",
+        "animatedDiagram": "Animated Diagram",
+        "animatedDiagramDesc": "Draw a transformer architecture with animated connectors",
+        "awsArchitecture": "AWS Architecture",
+        "awsArchitectureDesc": "Create a cloud architecture diagram with AWS icons",
+        "replicateFlowchart": "Replicate Flowchart",
+        "replicateFlowchartDesc": "Upload and replicate an existing flowchart",
+        "creativeDrawing": "Creative Drawing",
+        "creativeDrawingDesc": "Draw something fun and creative",
+        "cachedNotice": "Examples are cached for instant response"
+    },
+    "input": {
+        "placeholder": "Describe your diagram or paste an image...",
+        "send": "Send",
+        "sending": "Sending"
+    }
+}

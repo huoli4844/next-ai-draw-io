@@ -20,10 +20,12 @@ import { FaGithub } from "react-icons/fa"
 import { Toaster } from "sonner"
 import { ButtonWithTooltip } from "@/components/button-with-tooltip"
 import { ChatInput } from "@/components/chat-input"
+import { LanguageSwitcher } from "@/components/language-switcher"
 import {
     SettingsDialog,
     STORAGE_ACCESS_CODE_KEY,
 } from "@/components/settings-dialog"
+import { useLanguage } from "@/contexts/language-context"
 
 // localStorage keys for persistence
 const STORAGE_MESSAGES_KEY = "next-ai-draw-io-messages"
@@ -52,6 +54,7 @@ export default function ChatPanel({
     isMobile = false,
     onCloseProtectionChange,
 }: ChatPanelProps) {
+    const { t } = useLanguage()
     const {
         loadDiagram: onDisplayChart,
         handleExport: onExport,
@@ -705,9 +708,10 @@ Please retry with an adjusted search pattern or use display_diagram if retries a
                                 href="/about"
                                 className="text-sm text-muted-foreground hover:text-foreground transition-colors ml-2"
                             >
-                                About
+                                {t("nav.about")}
                             </Link>
                         )}
+                        {!isMobile && <LanguageSwitcher />}
                         {!isMobile && (
                             <ButtonWithTooltip
                                 tooltipContent="Recent generation failures were caused by our AI provider's infrastructure issue, not the app code. After extensive debugging, I've switched providers and observed 6 hours of stability. If issues persist, please report on GitHub."

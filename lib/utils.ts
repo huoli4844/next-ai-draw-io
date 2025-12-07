@@ -135,12 +135,10 @@ export function replaceNodes(currentXML: string, nodes: string): string {
         let currentRoot = currentDoc.querySelector("mxGraphModel > root")
         if (!currentRoot) {
             // If no root element is found, create the proper structure
-            const mxGraphModel =
-                currentDoc.querySelector("mxGraphModel") ||
-                currentDoc.createElement("mxGraphModel")
-
-            if (!currentDoc.contains(mxGraphModel)) {
-                currentDoc.appendChild(mxGraphModel)
+            let mxGraphModel = currentDoc.querySelector("mxGraphModel")
+            if (!mxGraphModel) {
+                mxGraphModel = currentDoc.createElement("mxGraphModel")
+                currentDoc.documentElement.appendChild(mxGraphModel)
             }
 
             currentRoot = currentDoc.createElement("root")

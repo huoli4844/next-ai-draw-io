@@ -1,6 +1,7 @@
 "use client"
 
 import { Cloud, GitBranch, Palette, Zap } from "lucide-react"
+import { useLanguage } from "@/contexts/language-context"
 
 interface ExampleCardProps {
     icon: React.ReactNode
@@ -39,6 +40,8 @@ export default function ExamplePanel({
     setInput: (input: string) => void
     setFiles: (files: File[]) => void
 }) {
+    const { t } = useLanguage()
+
     const handleReplicateFlowchart = async () => {
         setInput("Replicate this flowchart.")
 
@@ -72,25 +75,24 @@ export default function ExamplePanel({
             {/* Welcome section */}
             <div className="text-center mb-6">
                 <h2 className="text-lg font-semibold text-foreground mb-2">
-                    Create diagrams with AI
+                    {t("examples.welcomeTitle")}
                 </h2>
                 <p className="text-sm text-muted-foreground max-w-xs mx-auto">
-                    Describe what you want to create or upload an image to
-                    replicate
+                    {t("examples.welcomeDesc")}
                 </p>
             </div>
 
             {/* Examples grid */}
             <div className="space-y-3">
                 <p className="text-xs font-medium text-muted-foreground uppercase tracking-wider px-1">
-                    Quick Examples
+                    {t("examples.quickExamples")}
                 </p>
 
                 <div className="grid gap-2">
                     <ExampleCard
                         icon={<Zap className="w-4 h-4 text-primary" />}
-                        title="Animated Diagram"
-                        description="Draw a transformer architecture with animated connectors"
+                        title={t("examples.animatedDiagram")}
+                        description={t("examples.animatedDiagramDesc")}
                         onClick={() => {
                             setInput(
                                 "Give me a **animated connector** diagram of transformer's architecture",
@@ -101,22 +103,22 @@ export default function ExamplePanel({
 
                     <ExampleCard
                         icon={<Cloud className="w-4 h-4 text-primary" />}
-                        title="AWS Architecture"
-                        description="Create a cloud architecture diagram with AWS icons"
+                        title={t("examples.awsArchitecture")}
+                        description={t("examples.awsArchitectureDesc")}
                         onClick={handleReplicateArchitecture}
                     />
 
                     <ExampleCard
                         icon={<GitBranch className="w-4 h-4 text-primary" />}
-                        title="Replicate Flowchart"
-                        description="Upload and replicate an existing flowchart"
+                        title={t("examples.replicateFlowchart")}
+                        description={t("examples.replicateFlowchartDesc")}
                         onClick={handleReplicateFlowchart}
                     />
 
                     <ExampleCard
                         icon={<Palette className="w-4 h-4 text-primary" />}
-                        title="Creative Drawing"
-                        description="Draw something fun and creative"
+                        title={t("examples.creativeDrawing")}
+                        description={t("examples.creativeDrawingDesc")}
                         onClick={() => {
                             setInput("Draw a cat for me")
                             setFiles([])
@@ -125,7 +127,7 @@ export default function ExamplePanel({
                 </div>
 
                 <p className="text-[11px] text-muted-foreground/60 text-center mt-4">
-                    Examples are cached for instant response
+                    {t("examples.cachedNotice")}
                 </p>
             </div>
         </div>

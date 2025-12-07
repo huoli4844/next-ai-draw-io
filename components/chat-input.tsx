@@ -29,6 +29,7 @@ import {
 } from "@/components/ui/dialog"
 import { Textarea } from "@/components/ui/textarea"
 import { useDiagram } from "@/contexts/diagram-context"
+import { useLanguage } from "@/contexts/language-context"
 import { FilePreviewList } from "./file-preview-list"
 
 const MAX_FILE_SIZE = 2 * 1024 * 1024 // 2MB
@@ -142,6 +143,7 @@ export function ChatInput({
     drawioUi = "min",
     onToggleDrawioUi = () => {},
 }: ChatInputProps) {
+    const { t } = useLanguage()
     const { diagramHistory, saveDiagramToFile } = useDiagram()
     const textareaRef = useRef<HTMLTextAreaElement>(null)
     const fileInputRef = useRef<HTMLInputElement>(null)
@@ -306,7 +308,7 @@ export function ChatInput({
                     onChange={handleChange}
                     onKeyDown={handleKeyDown}
                     onPaste={handlePaste}
-                    placeholder="Describe your diagram or paste an image..."
+                    placeholder={t("input.placeholder")}
                     disabled={isDisabled}
                     aria-label="Chat input"
                     className="min-h-[60px] max-h-[200px] resize-none border-0 bg-transparent px-4 py-3 text-sm focus-visible:ring-0 focus-visible:ring-offset-0 placeholder:text-muted-foreground/60"
@@ -460,7 +462,9 @@ export function ChatInput({
                             size="sm"
                             className="h-8 px-4 rounded-xl font-medium shadow-sm"
                             aria-label={
-                                isDisabled ? "Sending..." : "Send message"
+                                isDisabled
+                                    ? t("input.sending")
+                                    : t("input.send")
                             }
                         >
                             {isDisabled ? (
@@ -468,7 +472,7 @@ export function ChatInput({
                             ) : (
                                 <>
                                     <Send className="h-4 w-4 mr-1.5" />
-                                    Send
+                                    {t("input.send")}
                                 </>
                             )}
                         </Button>

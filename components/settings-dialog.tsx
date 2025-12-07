@@ -13,6 +13,7 @@ import {
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Switch } from "@/components/ui/switch"
+import { useLanguage } from "@/contexts/language-context"
 
 interface SettingsDialogProps {
     open: boolean
@@ -28,6 +29,7 @@ export function SettingsDialog({
     onOpenChange,
     onCloseProtectionChange,
 }: SettingsDialogProps) {
+    const { t } = useLanguage()
     const [accessCode, setAccessCode] = useState("")
     const [closeProtection, setCloseProtection] = useState(true)
     const [isVerifying, setIsVerifying] = useState(false)
@@ -64,7 +66,7 @@ export function SettingsDialog({
             const data = await response.json()
 
             if (!data.valid) {
-                setError(data.message || "Invalid access code")
+                setError(data.message || t("settings.invalidCode"))
                 setIsVerifying(false)
                 return
             }
@@ -95,26 +97,26 @@ export function SettingsDialog({
         <Dialog open={open} onOpenChange={onOpenChange}>
             <DialogContent className="sm:max-w-md">
                 <DialogHeader>
-                    <DialogTitle>Settings</DialogTitle>
+                    <DialogTitle>{t("settings.title")}</DialogTitle>
                     <DialogDescription>
-                        Configure your access settings.
+                        {t("settings.description")}
                     </DialogDescription>
                 </DialogHeader>
                 <div className="space-y-4 py-2">
                     <div className="space-y-2">
                         <label className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
-                            Access Code
+                            {t("settings.accessCode")}
                         </label>
                         <Input
                             type="password"
                             value={accessCode}
                             onChange={(e) => setAccessCode(e.target.value)}
                             onKeyDown={handleKeyDown}
-                            placeholder="Enter access code"
+                            placeholder={t("settings.accessCodePlaceholder")}
                             autoComplete="off"
                         />
                         <p className="text-[0.8rem] text-muted-foreground">
-                            Required if the server has enabled access control.
+                            {t("settings.accessCodeDesc")}
                         </p>
                         {error && (
                             <p className="text-[0.8rem] text-destructive">
@@ -125,10 +127,10 @@ export function SettingsDialog({
                     <div className="flex items-center justify-between">
                         <div className="space-y-0.5">
                             <Label htmlFor="close-protection">
-                                Close Protection
+                                {t("settings.closeProtection")}
                             </Label>
                             <p className="text-[0.8rem] text-muted-foreground">
-                                Show confirmation when leaving the page.
+                                {t("settings.closeProtectionDesc")}
                             </p>
                         </div>
                         <Switch
@@ -143,10 +145,12 @@ export function SettingsDialog({
                         variant="outline"
                         onClick={() => onOpenChange(false)}
                     >
-                        Cancel
+                        {t("settings.cancel")}
                     </Button>
                     <Button onClick={handleSave} disabled={isVerifying}>
-                        {isVerifying ? "Verifying..." : "Save"}
+                        {isVerifying
+                            ? t("settings.verifying")
+                            : t("settings.save")}
                     </Button>
                 </DialogFooter>
             </DialogContent>

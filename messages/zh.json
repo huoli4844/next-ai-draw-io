@@ -1,0 +1,99 @@
+{
+    "nav": {
+        "editor": "编辑器",
+        "about": "关于",
+        "github": "在GitHub上查看"
+    },
+    "chat": {
+        "send": "发送",
+        "sending": "发送中...",
+        "placeholder": "让AI帮你创建或修改图表...",
+        "clearChat": "清空聊天",
+        "clearConfirmTitle": "清空聊天记录？",
+        "clearConfirmDesc": "这将清除所有消息，但保留当前图表。",
+        "clearConfirmCancel": "取消",
+        "clearConfirmClear": "清空",
+        "errorRetry": "重试",
+        "maxFiles": "最多允许 {count} 个文件",
+        "fileRejected": "{count} 个文件被拒绝：",
+        "fileTooLarge": "\"{name}\" 大小为 {size}（超过2MB）",
+        "onlyMore": "只允许再添加 {count} 个文件"
+    },
+    "settings": {
+        "title": "设置",
+        "description": "配置访问设置。",
+        "accessCode": "访问码",
+        "accessCodePlaceholder": "输入访问码",
+        "accessCodeDesc": "如果服务器启用了访问控制，则需要提供访问码。",
+        "closeProtection": "关闭保护",
+        "closeProtectionDesc": "离开页面时显示确认提示。",
+        "cancel": "取消",
+        "save": "保存",
+        "verifying": "验证中...",
+        "invalidCode": "无效的访问码"
+    },
+    "history": {
+        "title": "图表历史",
+        "description": "查看和恢复之前的图表版本",
+        "current": "当前",
+        "version": "版本 {count}",
+        "restore": "恢复",
+        "close": "关闭",
+        "empty": "无历史记录"
+    },
+    "save": {
+        "title": "保存图表",
+        "description": "以多种格式下载图表",
+        "format": "格式",
+        "filename": "文件名",
+        "filenamePlaceholder": "我的图表",
+        "download": "下载",
+        "cancel": "取消"
+    },
+    "buttons": {
+        "attachImage": "附加图片",
+        "viewHistory": "查看历史",
+        "saveDiagram": "保存图表",
+        "clearChat": "清空聊天",
+        "settings": "设置",
+        "toggleTheme": "切换主题",
+        "togglePanel": "切换聊天面板"
+    },
+    "tooltip": {
+        "pasteImage": "或粘贴/拖放图片",
+        "shortcuts": "Cmd/Ctrl+Enter 发送"
+    },
+    "message": {
+        "copy": "复制",
+        "copied": "已复制！",
+        "edit": "编辑",
+        "regenerate": "重新生成",
+        "thumbsUp": "点赞",
+        "thumbsDown": "点踩",
+        "viewDiagram": "查看图表"
+    },
+    "examples": {
+        "title": "示例",
+        "placeholder": "试试这些示例提示：",
+        "createFlowchart": "创建一个用户登录流程的流程图",
+        "createArchitecture": "创建一个包含EC2、RDS和S3的AWS架构图",
+        "addAnimation": "给我的图表添加动画连接器",
+        "welcomeTitle": "使用 AI 创建图表",
+        "welcomeDesc": "描述你想创建的内容或上传图片进行复制",
+        "quickExamples": "快速示例",
+        "animatedDiagram": "动画图表",
+        "animatedDiagramDesc": "绘制带有动画连接器的 Transformer 架构",
+        "awsArchitecture": "AWS 架构",
+        "awsArchitectureDesc": "使用 AWS 图标创建云架构图",
+        "replicateFlowchart": "复制流程图",
+        "replicateFlowchartDesc": "上传并复制现有的流程图",
+        "creativeDrawing": "创意绘图",
+        "creativeDrawingDesc": "绘制一些有趣和创意的内容",
+        "cachedNotice": "示例已缓存，可即时响应"
+    },
+    "input": {
+        "placeholder": "描述你的图表或粘贴图片...",
+        "send": "发送",
+        "sending": "发送中"
+    }
+}
